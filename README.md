@@ -1,19 +1,62 @@
-# QA Engineer Test
-Hello, congrats on being identified as a potential employee of Swipe. You were sent this skills assessment as a way to identify your current strengths and weaknesses as a potential hire for Swipe as a QA Engineer. Doing well on this assessment is absolutely critical to receiving a job offer.
+SWIPE QA Test Engineer Exercise
+===================
 
-## Rules
-1. It should only take about 1-2 hours to complete the assessment. If you need more time, that is allowed, however the amount of time from your first commit to last will be used to assess you as a candidate for the position. Only start the assessment when you are ready to give it your full attention.
-2. You may use any code or text editor to complete the assessment you choose. We recommend Visual Studio Code as a free choice.
-3. You may use any programming language, library or framework to complete the assessment.
-4. You may consult anybody and anything to help you with your assessment, including google, developer documentation, stackoverflow, etc. However, it will be apparent if you use copy-pasta code, and your unique code style will be part of your assessment.
-5. If you use others' code (i.e. Stack overflow answers), make sure you credit the author/answer in comments inline with your work.
+You've been selected as a candidate for the QA Test Engineer position at SWIPE. Great! This project is intended to see how you work when producing a test for an actual application.
 
-## Assessment Scenario
-Congrats, it's your first day at Swipe. You get your badge, find a desk, and are ready to get started. Your manager comes up, introduces themself, and assigns you your first task. He tells you that, recently a junior developer started at the company. The manager asked the junior developer to build a simple authentication service for a new project. A week after starting, the junior developer told your boss that the project was complete and then left for vacation. Your boss says that he thinks the junior developer may not be very good, and that he's pretty sure the authentication service does not match the specifications he gave the developer, but he doesn't have time to do a full QA sweep or add any test cases.
+You'll be tasked with taking the instructions in this project (including a [user story](https://www.mountaingoatsoftware.com/agile/user-stories), [Behavior-Driven-Design scenarios](https://dannorth.net/introducing-bdd/), and some helpful pointers), and providing automated tests. We'll then review your submission for completeness, best practices, and accuracy in terms of testing the requirements.
 
-He wants you to do two things:
+The project: Produce test cases, with accompanying automated test(s) logic, covering the user stories and scenarios in this document. Your test(s) should be able to arrange the necessary conditions to execute the test, perform the test, and positively assert that the expected outcome was met. You'll be testing against one of our applications (Argus), and should have received credentials in a separate communication.
 
-1. Review the design files and product specifications in the design/ and read the design spec document, then do a manual QA sweep of the application. Ensure that the application passes the design spec. Any design inconsistencies and bugs should be listed in the BUGS.md file. Feel free to put any screenshots in a screenshots directory and reference them.
+Let's get started!
 
-2. Create automated acceptance tests using any technology you like and put the code for those acceptance tests in the tests/ directory. If there are design inconsistencies or bugs in the application, THE TESTS SHOULD FAIL. You can use any programming language or library/framework. A few technologies the organization has used before are cypress.js, puppeteer, playwright and selenium. Ensure the tests will run when the command npm test is run.
+## Story
 
+```
+As an observer,
+I would like to be able to submit an observation for a participant,
+So that I may be able to provide meaningful feedback about that participant's performance in the classroom
+```
+
+```
+As an observer,
+I would like to be able to view my submitted observations
+So that I can ensure that those observations have been recorded accurately
+```
+
+```
+As an observer,
+I would like to be able to recall an observation from the "Submitted" status, to the "Saved" status
+So that I may make corrections to the previously submitted observation
+```
+
+## Scenarios
+```
+Given an observer who inputs complete data and valid for an observation
+When that observer submits the observation
+Then the user should be informed that the observation was submitted successfully
+And that user should be able to view the observation in their list of observations
+```
+```
+Given an observer who inputs incomplete data for an observation
+When that observer attempts to submit the observation
+Then the user should be informed that the observation is incomplete submitted successfully
+And the user should be able to identify incomplete/invalid observation fields
+```
+
+## Technical Restrictions
+
+- Write the tests using a browser automation framework (e.g. Selenium)
+- Include a test plan that clearly indicates the steps you took to verify that the features work as defined by the requirements above.
+
+## Instructions
+
+- If you don't already have one, [create an account](https://github.com/join) on Github
+- Install a Git client ([Github provides one that's simple and intuitive](https://desktop.github.com/))
+- [Create a fork this project into your own Github account](https://help.github.com/articles/fork-a-repo/) (do **NOT** clone the project from the SWIPE account)
+- [Clone your fork](https://help.github.com/articles/cloning-a-repository/) of this project
+- Add your automated tests to the repository directory
+- When finished, ensure that your files are in the repository directory, and commit your code
+- Push your changes to your fork of the repository
+- Perform a [pull request](https://help.github.com/articles/about-pull-requests/), and we'll be able to see your code in the SWIPE account!
+
+Feel free to reach out at any time to your contact at SWIPE with any questions. **Good luck!**
